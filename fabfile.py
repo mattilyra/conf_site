@@ -220,6 +220,8 @@ def deploy_files(version='master'):
         with cd(env.code_root):
             # discard any local changes to the repo
             sudo('git reset --hard', user=env.webuser)
+            # Update repository with remote branches, etc.
+            sudo("git fetch", user=env.webuser)
             sudo('git checkout {}'.format(version), user=env.webuser)
             sudo('git pull', user=env.webuser)
 
