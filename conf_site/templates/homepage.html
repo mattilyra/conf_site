@@ -1,6 +1,6 @@
 {% extends "site_base.html" %}
 
-{% load flatblocks i18n staticfiles %}
+{% load i18n pinax_boxes_tags staticfiles %}
 
 {% block body_class %}home{% endblock %}
 
@@ -9,7 +9,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        {% flatblock "banner" %}
+        {% box "banner" %}
       </div>
     </div>
   </div>
@@ -17,5 +17,5 @@
 {% endblock %}
 
 {% block body %}
-{% flatblock "homepage" %}
+{% box "homepage" %}
 {% endblock %}

@@ -1,7 +1,5 @@
 from django import forms
 
-from markitup.widgets import MarkItUpWidget
-
 from .models import Proposal
 
 
@@ -17,10 +15,6 @@ class ProposalForm(forms.ModelForm):
             "additional_notes",
             "recording_release",
         ]
-        widgets = {
-            "abstract": MarkItUpWidget(),
-            "additional_notes": MarkItUpWidget(),
-        }
 
     def clean_description(self):
         value = self.cleaned_data["description"]

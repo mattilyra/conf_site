@@ -112,7 +112,6 @@ MIDDLEWARE_CLASSES = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "reversion.middleware.RevisionMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "django.contrib.flatpages.middleware.FlatpageFallbackMiddleware",
 ]
 
 ROOT_URLCONF = "conf_site.urls"
@@ -130,7 +129,6 @@ INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
-    "django.contrib.flatpages",
     "django.contrib.messages",
     "django.contrib.sessions",
     "django.contrib.sites",
@@ -145,11 +143,10 @@ INSTALLED_APPS = [
     "account",
     "analytical",
     "django_extensions",
-    "django_markdown",
     "easy_thumbnails",
+    "pinax.boxes",
     "eventlog",
-    "flatblocks",
-    "markitup",
+    "pinax.pages",
     "reversion",
     "sitetree",
     "taggit",
@@ -246,11 +243,6 @@ AUTHENTICATION_BACKENDS = [
     # Auth backends
     "account.auth_backends.EmailAuthenticationBackend",
 ]
-
-
-MARKITUP_SET = "markitup/sets/markdown"
-MARKITUP_FILTER = ["conf_site.markdown_parser.parse", {}]
-MARKITUP_SKIN = "markitup/skins/simple"
 
 CONFERENCE_ID = 1
 SYMPOSION_PAGE_REGEX = r"(([\w-]{1,})(/[\w-]{1,})*)/"

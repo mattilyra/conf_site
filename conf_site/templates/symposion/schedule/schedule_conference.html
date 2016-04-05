@@ -1,6 +1,6 @@
 {% extends "site_base.html" %}
 
-{% load flatblocks i18n %}
+{% load i18n pinax_boxes_tags %}
 
 {% block head_title %}Conference Schedule{% endblock %}
 
@@ -14,7 +14,7 @@
         <h1>Conference Schedule</h1>
         {% block breadcrumbs %}{% endblock %}
     </div>
-    {% flatblock "schedule_top" %}
+    {% box "schedule-top" %}
 
     {% for section in sections %}
             {% for timetable in section.days %}
@@ -23,5 +23,5 @@
             {% endfor %}
     {% endfor %}
 
-    {% flatblock "schedule_bottom" %}
+    {% box "schedule-bottom" %}
 {% endblock %}

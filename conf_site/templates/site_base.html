@@ -1,6 +1,6 @@
 {% extends "theme_bootstrap/base.html" %}
 
-{% load analytical flatblocks i18n markitup_tags sitetree staticfiles %}
+{% load analytical i18n pinax_boxes_tags sitetree staticfiles %}
 
 {% block style_base %}
 {% analytical_head_top %}
@@ -42,9 +42,9 @@
         <div class="container">
             <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="fa fa-bars"></span></button>
             <div class="navbar-header">
-              {% flatblock "logo" %}
+              {% box "logo" %}
             </div>
-            {% flatblock "hashtag" %}
+            {% box "hashtag" %}
             <div class="collapse navbar-collapse navbar-responsive-collapse">
                 <ul class="nav navbar-nav">
                 {% sitetree_menu from "main" include "trunk" template "menu_bootstrap3.html" %}
@@ -76,7 +76,7 @@
         {% endblock %}
         <footer class="footer row">
             <div class="large-12 columns text-center">
-                {% flatblock "footer" %}
+                {% box "footer" %}
             </div>
         </footer>
     </div>
@@ -93,6 +93,5 @@
 {% block script_base %}
     <script src="{% static "js/bootstrap.min.js" %}"></script>
     <script src="{% static "pinax/js/theme.js" %}"></script>
-    {% markitup_media "no-jquery" %}
     {% block extra_script %}{% endblock %}
 {% endblock %}
