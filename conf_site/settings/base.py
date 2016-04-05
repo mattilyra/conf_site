@@ -145,7 +145,7 @@ INSTALLED_APPS = [
     "django_extensions",
     "easy_thumbnails",
     "pinax.boxes",
-    "eventlog",
+    "pinax.eventlog",
     "pinax.pages",
     "reversion",
     "sitetree",

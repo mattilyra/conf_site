@@ -1,13 +1,13 @@
 Django==1.9.5
 django-analytical==2.0.0
 django-extensions==1.6.1
-eventlog==0.8.0
 Fabric==1.10.1
 fabtools==0.19.0
 gunicorn==19.4.5
 jinja2==2.7.3
 Pillow==2.6.1
 pinax-boxes==2.1.2
+pinax-eventlog==1.1.1
 pinax-pages==0.4.2
 pinax-theme-bootstrap==7.3.0
 psycopg2==2.6.1
