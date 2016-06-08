@@ -77,7 +77,7 @@
   notify: restart gunicorn
 
 - name: workaround for troublesome bug
-  django_manage: command="migrate auth"
+  django_manage: command="migrate sites"
                  app_path={{ project_folder_root }}
                  settings=conf_site.settings.{{ environment_type }}
                  virtualenv={{ virtualenv_folder_root }}current
