@@ -1,21 +1,12 @@
 {% extends "site_base.html" %}
 
-{% load i18n pinax_boxes_tags staticfiles %}
+{% load i18n %}
+{% load pinax_boxes_tags %}
+
+{% block head_title %}{% trans "Welcome" %}{% endblock %}
 
 {% block body_class %}home{% endblock %}
 
-{% block body_before %}
-<div id="banner">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        {% box "banner" %}
-      </div>
-    </div>
-  </div>
-</div>
-{% endblock %}
-
 {% block body %}
-{% box "homepage" %}
+    {% box "homepage" %}
 {% endblock %}

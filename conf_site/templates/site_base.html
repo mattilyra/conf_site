@@ -1,97 +1,56 @@
 {% extends "theme_bootstrap/base.html" %}
 
-{% load analytical i18n pinax_boxes_tags sitetree staticfiles %}
+{% load staticfiles %}
+{% load analytical %}
+{% load i18n %}
+{% load sitetree %}
 
-{% block style_base %}
-{% analytical_head_top %}
-<link href="{% static "css/site.css" %}" rel="stylesheet">
-{% block extra_style %}{% endblock %}
+
+{% block styles %}
+    {% include "_styles.html" %}
 {% endblock %}
+
 
 {% block extra_head_base %}
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <link rel="apple-touch-icon" sizes="57x57" href="{{ STATIC_URL }}favicon/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="{{ STATIC_URL }}favicon/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ STATIC_URL }}favicon/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ STATIC_URL }}favicon/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ STATIC_URL }}favicon/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="{{ STATIC_URL }}favicon/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="{{ STATIC_URL }}favicon/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="{{ STATIC_URL }}favicon/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ STATIC_URL }}favicon/apple-touch-icon-180x180.png">
-    <link rel="icon" type="image/png" href="{{ STATIC_URL }}favicon/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="{{ STATIC_URL }}favicon/favicon-194x194.png" sizes="194x194">
-    <link rel="icon" type="image/png" href="{{ STATIC_URL }}favicon/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="{{ STATIC_URL }}favicon/android-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="{{ STATIC_URL }}favicon/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="{{ STATIC_URL }}favicon/manifest.json">
-    <link rel="shortcut icon" href="{{ STATIC_URL }}favicon/favicon.ico">
-    <meta name="msapplication-TileColor" content="#2d89ef">
-    <meta name="msapplication-TileImage" content="{{ STATIC_URL }}favicon/mstile-144x144.png">
-    <meta name="msapplication-config" content="{{ STATIC_URL }}favicon/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
+    {% analytical_head_top %}
     {% block extra_head %}{% endblock %}
-    {% analytical_head_bottom %}
 {% endblock %}
 
-
-{% block topbar_base %}
-{% analytical_body_top %}
-<header>
-    <div class="navbar navbar-default {% block navbar_class %}{% endblock %}">
-        <div class="container">
-            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="fa fa-bars"></span></button>
-            <div class="navbar-header">
-              {% box "logo" %}
-            </div>
-            {% box "hashtag" %}
-            <div class="collapse navbar-collapse navbar-responsive-collapse">
-                <ul class="nav navbar-nav">
-                {% sitetree_menu from "main" include "trunk" template "menu_bootstrap3.html" %}
-                {% include "_account_bar.html" %}
-                </ul>
-            </div>
-        </div>
-    </div>
-</header>
+{% block nav %}
+    {% sitetree_menu from "main" include "trunk" template "sitetree/menu_bootstrap3.html" %}
 {% endblock %}
-
 
 {% block body_base %}
-    {% block body_before %}{% endblock %}
-    <div class="container">
-        {% include "_messages.html" %}
-        {% block body_outer %}
+    <section id="content_body">
+        <div class="container">
+            {% include "_messages.html" %}
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-9">
                     {% block body %}
                     {% endblock %}
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     {% block sidebar %}
                         {% include "_default_sidebar.html" %}
                     {% endblock %}
                 </div>
             </div>
-        {% endblock %}
-        <footer class="footer row">
-            <div class="large-12 columns text-center">
-                {% box "footer" %}
-            </div>
-        </footer>
-    </div>
+        </div>
+    </section>
 {% endblock %}
 
-{% block footer_base %}{% endblock %}
+
+{% block footer %}
+    {% include "_footer.html" %}
+{% endblock %}
+
+
+{% block scripts %}
+    {% include "_scripts.html" %}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js"></script>
+{% endblock %}
 
 {% block extra_body_base %}
     {% analytical_body_bottom %}
     {% block extra_body %}{% endblock %}
-{% endblock %}
-
-
-{% block script_base %}
-    <script src="{% static "js/bootstrap.min.js" %}"></script>
-    <script src="{% static "pinax/js/theme.js" %}"></script>
-    {% block extra_script %}{% endblock %}
 {% endblock %}
