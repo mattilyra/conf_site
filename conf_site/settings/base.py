@@ -266,6 +266,7 @@ STATICFILES_STORAGE = (
     "django.contrib.staticfiles.storage.ManifestStaticFilesStorage")
 SYMPOSION_PAGE_REGEX = r"(([\w-]{1,})(/[\w-]{1,})*)/"
 PROPOSAL_FORMS = {
+    "poster-session": "conf_site.proposals.forms.ProposalForm",
     "talk": "conf_site.proposals.forms.ProposalForm",
     "tutorial": "conf_site.proposals.forms.ProposalForm",
 }
