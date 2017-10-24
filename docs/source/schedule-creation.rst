@@ -36,6 +36,12 @@ Adding Presentations to the Schedule
 
 *to be written*
 
+Creating New Presentations
+--------------------------
+
+proposal & speaker
+accepted proposalresult
+
 Adding Plenary Sessions
 +++++++++++++++++++++++
 
@@ -44,3 +50,15 @@ Plenary sessions that do not have associated `Presentations` (e.g.
 contain the correct content, the "Content overrride" field must be filled out.
 
 *to be written*
+
+Modifying Presentations
+-----------------------
+
+*modify slots to change schedule times, add a new slot into empty location if necessary*
+
+
+Publishing
+----------
+
+- published attribute in admin
+- add to main menu
